@@ -1,9 +1,26 @@
 // 名前を入力すると運勢結果が表示される
 
-// 運勢を占うボタンが押されたら入力内容を取得
+// 表示される入力欄
+let fortuneTelling = document.getElementById("fortuneTelling");
 
 // 運勢結果ストック
+const result = [
+  "運がいい",
+  "とても運がいい",
+  "運がいいかもしれない",
+  "運が悪いかもしれない",
+  "運がいいのは気のせいかもしれない",
+  "鹿になるには険しい道だぞ",
+  "うれしい、たのしい、だいすき",
+  "もうそろそろ寝たい",
+];
 
-/* 名前が入力されていることを確認したうえでランダムで
-運勢結果ストックの中から1つ選択して表示する
+/* ランダムで運勢結果ストックの中から1つ選択して表示する
 */
+fortuneTelling.addEventListener("click", function() {
+  let resultNum = Math.floor(Math.random() * result.length);
+  let resultText = result[resultNum];
+
+  let displayFortuneTellingResult = document.getElementById("result");
+  displayFortuneTellingResult.innerHTML = "今日の運勢は「" + resultText + "」だよ!";
+}); 
