@@ -1,7 +1,7 @@
 const addTodoListButton = document.getElementById("addTodo");
-const todos = [];
 
 addTodoListButton.addEventListener("click", () => {
+  const todos = [];
   let getTodoContent = document.querySelector("#inputText").value;
   
   if (getTodoContent != "") {
